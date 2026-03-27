@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Sets up theme defaults and registers support for various WordPress
  * features such as title tag, post thumbnails, and HTML5 markup.
