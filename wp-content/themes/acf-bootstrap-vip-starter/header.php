@@ -6,3 +6,6 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+    <a class="skip-link screen-reader-text" href="#primary">
+        Skip to content
+    </a>    
