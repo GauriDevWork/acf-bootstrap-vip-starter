@@ -91,3 +91,16 @@ function acf_vip_remove_block_css() {
     wp_dequeue_style('wp-block-library');
 }
 add_action('wp_enqueue_scripts', 'acf_vip_remove_block_css', 100);
+
+
+
+// ACF JSON save path
+add_filter('acf/settings/save_json', function() {
+    return get_stylesheet_directory() . '/acf-json';
+});
+
+// ACF JSON load path
+add_filter('acf/settings/load_json', function($paths) {
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    return $paths;
+});
