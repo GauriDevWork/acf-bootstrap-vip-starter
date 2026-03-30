@@ -1,0 +1,40 @@
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.section-hero {
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.section-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-item img {
+    height: 70vh;
+    object-fit: cover;
+}
+
+.hero-swiper img {
+    height: 70vh;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    color: #fff;
+}
