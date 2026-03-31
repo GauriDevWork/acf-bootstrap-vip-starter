@@ -93,6 +93,7 @@ add_action('wp_enqueue_scripts', 'acf_vip_enqueue_assets');
  * @param string $handle The script handle.
  * @return string The modified script tag.
  */
+require_once get_template_directory() . '/inc/helpers.php';
 function acf_vip_defer_scripts($tag, $handle) {
 
     $defer_scripts = ['bootstrap'];
@@ -134,3 +135,54 @@ add_filter('acf/settings/load_json', function($paths) {
     $paths[] = get_stylesheet_directory() . '/acf-json';
     return $paths;
 });
+
+function acf_vip_get_used_layouts() {
+
+    if (!is_singular()) return [];
+
+    $layouts = get_field('page_builder');
+
+    if (empty($layouts)) return [];
+
+    return array_column($layouts, 'acf_fc_layout');
+}
+
+
+function acf_vip_enqueue_layout_css() {
+
+    $layouts = acf_vip_get_used_layouts();
+
+    // HERO CSS
+    if (in_array('hero_section', $layouts)) {
+        wp_enqueue_style(
+            'hero-css',
+            get_template_directory_uri() . '/assets/css/hero.css',
+            [],
+            '1.0'
+        );
+    }
+
+    // CTA CSS (future)
+    if (in_array('cta_section', $layouts)) {
+        wp_enqueue_style(
+            'cta-css',
+            get_template_directory_uri() . '/assets/css/cta.css',
+            [],
+            '1.0'
+        );
+    }
+
+}
+add_action('wp_enqueue_scripts', 'acf_vip_enqueue_layout_css');
+
+function acf_vip_bg_class($bg) {
+
+    $map = [
+        'light' => 'bg-light',
+        'dark' => 'bg-dark text-white',
+        'primary' => 'bg-primary text-white',
+        'secondary' => 'bg-secondary text-white',
+    ];
+
+    return $map[$bg] ?? 'bg-light';
+}
