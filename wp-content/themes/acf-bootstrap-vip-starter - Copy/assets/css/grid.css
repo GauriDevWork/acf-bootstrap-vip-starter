@@ -1,0 +1,17 @@
+.section-grid .grid-card {
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.section-grid .grid-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.section-grid img {
+    max-width: 60px;
+    margin-bottom: 15px;
+}
