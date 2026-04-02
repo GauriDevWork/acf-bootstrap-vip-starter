@@ -27,7 +27,13 @@ function acf_vip_image($image, $class = 'img-fluid', $size = 'full') {
 }
 
 function acf_vip_text_align($align = 'left') {
-    return ($align === 'center') ? 'text-center' : 'text-start';
+   $map = [
+        'left'   => 'text-start',
+        'center' => 'text-center',
+        'right'  => 'text-end',
+    ];
+
+    return $map[$align] ?? 'text-start';
 }
 
 function acf_vip_section_classes($bg = 'light', $spacing = true) {
@@ -45,4 +51,27 @@ function acf_vip_section_classes($bg = 'light', $spacing = true) {
     $classes .= ($spacing) ? ' py-5' : '';
 
     return $classes;
+}
+
+
+function acf_vip_section_settings() {
+
+    $id        = get_sub_field('section_id');
+    $class     = get_sub_field('custom_class');
+    $container = get_sub_field('container_type') ?: 'container';
+    $spacing   = get_sub_field('spacing') ?: 'medium';
+
+    $spacing_map = [
+        'none'   => '',
+        'small'  => 'py-3',
+        'medium' => 'py-5',
+        'large'  => 'py-7'
+    ];
+
+    return [
+        'id'        => $id ? 'id="' . esc_attr($id) . '"' : '',
+        'class'     => esc_attr($class),
+        'container' => esc_attr($container),
+        'spacing'   => $spacing_map[$spacing] ?? 'py-5'
+    ];
 }

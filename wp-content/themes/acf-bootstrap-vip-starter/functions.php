@@ -172,6 +172,17 @@ function acf_vip_enqueue_layout_css() {
         );
     }
 
+    // GRID CSS
+    if (in_array('grid_section', $layouts)) {
+
+    wp_enqueue_style(
+        'grid-css',
+        get_template_directory_uri() . '/assets/css/grid.css',
+        [],
+        '1.0'
+    );
+}
+
 }
 add_action('wp_enqueue_scripts', 'acf_vip_enqueue_layout_css');
 
