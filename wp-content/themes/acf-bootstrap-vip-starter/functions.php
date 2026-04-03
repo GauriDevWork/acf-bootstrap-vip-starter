@@ -175,14 +175,32 @@ function acf_vip_enqueue_layout_css() {
     // GRID CSS
     if (in_array('grid_section', $layouts)) {
 
-    wp_enqueue_style(
-        'grid-css',
-        get_template_directory_uri() . '/assets/css/grid.css',
-        [],
-        '1.0'
-    );
-}
+        wp_enqueue_style(
+            'grid-css',
+            get_template_directory_uri() . '/assets/css/grid.css',
+            [],
+            '1.0'
+        );
+    }
 
+    // TESTIMONIALS CSS AND JS
+    if (in_array('testimonials_section', $layouts)) {
+
+        wp_enqueue_style(
+            'testimonials-css',
+            get_template_directory_uri() . '/assets/css/testimonials.css',
+            [],
+            '1.0'
+        );
+
+        wp_enqueue_script(
+            'testimonials-swiper',
+            get_template_directory_uri() . '/assets/js/testimonials-swiper.js',
+            ['swiper'],
+            '1.0',
+            true
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'acf_vip_enqueue_layout_css');
 
