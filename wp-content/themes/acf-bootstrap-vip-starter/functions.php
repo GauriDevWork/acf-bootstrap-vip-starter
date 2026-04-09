@@ -201,6 +201,25 @@ function acf_vip_enqueue_layout_css() {
             true
         );
     }
+
+    // FAQ CSS AND JS
+    if (in_array('faq_section', $layouts)) {
+
+    wp_enqueue_style(
+        'faq-css',
+        get_template_directory_uri() . '/assets/css/faq.css',
+        [],
+        '1.0'
+    );
+
+    wp_enqueue_script(
+        'faq-js',
+        get_template_directory_uri() . '/assets/js/faq.js',
+        [],
+        '1.0',
+        true
+    );
+}
 }
 add_action('wp_enqueue_scripts', 'acf_vip_enqueue_layout_css');
 

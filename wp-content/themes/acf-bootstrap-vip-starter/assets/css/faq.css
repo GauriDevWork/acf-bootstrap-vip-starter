@@ -1,0 +1,87 @@
+/* =========================
+   FAQ SECTION
+========================= */
+.section-faq {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* =========================
+   FAQ ITEM
+========================= */
+.faq-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    background: #fff;
+}
+
+/* =========================
+   QUESTION BUTTON
+========================= */
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 40px 10px 0;
+    line-height: 1.4;
+}
+
+/* Remove default button styles */
+.faq-question:focus {
+    outline: none;
+}
+
+/* =========================
+   ICON (+ / -)
+========================= */
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"]::after {
+    content: '−';
+}
+
+/* =========================
+   ANSWER
+========================= */
+.faq-answer {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* =========================
+   SMOOTH SPACING
+========================= */
+.faq-answer p {
+    margin-bottom: 10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 767px) {
+
+    .faq-question {
+        font-size: 16px;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+    }
+
+}
