@@ -56,10 +56,13 @@ function acf_vip_section_classes($bg = 'light', $spacing = true) {
 
 function acf_vip_section_settings() {
 
-    $id        = get_sub_field('section_id');
-    $class     = get_sub_field('custom_class');
-    $container = get_sub_field('container_type') ?: 'container';
-    $spacing   = get_sub_field('spacing') ?: 'medium';
+    $settings = get_sub_field('section_settings');
+
+    // Safe fallback
+    $id        = $settings['section_id'] ?? '';
+    $class     = $settings['custom_class'] ?? '';
+    $container = $settings['container_type'] ?? 'container';
+    $spacing   = $settings['spacing'] ?? 'medium';
 
     $spacing_map = [
         'none'   => '',

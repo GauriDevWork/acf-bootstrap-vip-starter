@@ -205,21 +205,39 @@ function acf_vip_enqueue_layout_css() {
     // FAQ CSS AND JS
     if (in_array('faq_section', $layouts)) {
 
-    wp_enqueue_style(
-        'faq-css',
-        get_template_directory_uri() . '/assets/css/faq.css',
-        [],
-        '1.0'
-    );
+        wp_enqueue_style(
+            'faq-css',
+            get_template_directory_uri() . '/assets/css/faq.css',
+            [],
+            '1.0'
+        );
 
-    wp_enqueue_script(
-        'faq-js',
-        get_template_directory_uri() . '/assets/js/faq.js',
-        [],
-        '1.0',
-        true
-    );
-}
+        wp_enqueue_script(
+            'faq-js',
+            get_template_directory_uri() . '/assets/js/faq.js',
+            [],
+            '1.0',
+            true
+        );
+
+        
+        
+    }
+
+    // CONTENT CSS for content_section and two_column_section
+    if (
+        in_array('content_section', $layouts) ||
+        in_array('two_column_section', $layouts)
+    ) {
+
+        wp_enqueue_style(
+            'content-css',
+            get_template_directory_uri() . '/assets/css/content.css',
+            [],
+            '1.0'
+        );
+    }
+
 }
 add_action('wp_enqueue_scripts', 'acf_vip_enqueue_layout_css');
 
