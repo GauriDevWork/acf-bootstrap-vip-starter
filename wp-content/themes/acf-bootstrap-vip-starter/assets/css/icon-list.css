@@ -1,0 +1,84 @@
+/* =========================
+   BASE
+========================= */
+.icon-list-item {
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   ICON BASE
+========================= */
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon img {
+    max-width: 40px;
+}
+
+
+/* =========================
+   ICON BASE
+========================= */
+.icon-list-item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   PLAIN
+========================= */
+.icon-list-item.plain .icon {
+    background: none;
+}
+
+/* =========================
+   CIRCLE
+========================= */
+.section-icon-list .icon-list-item.circle .icon img{
+    width: 100px;
+    height: 69px;
+    border-radius: 60%;
+    background: #f5f5f5;
+}
+
+/* =========================
+   SQUARE
+========================= */
+.section-icon-list .icon-list-item.square .icon {
+    width: 50px;
+    height: 50px;
+    background: #f5f5f5;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.icon-content h5 {
+    margin-bottom: 5px;
+}
+
+.icon-content p {
+    margin: 0;
+    color: #555;
+}
+
+/* =========================
+   VERTICAL
+========================= */
+.icon-list-vertical .icon-list-item {
+    align-items: flex-start;
+}
+
+/* =========================
+   HORIZONTAL GRID
+========================= */
+@media (min-width: 992px) {
+    .row .icon-list-item {
+        align-items: center;
+    }
+}
