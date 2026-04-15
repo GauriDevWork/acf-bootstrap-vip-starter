@@ -1,0 +1,14 @@
+.section-stats .stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.section-stats .stat-label {
+    color: #666;
+    margin: 0;
+}

@@ -261,6 +261,24 @@ function acf_vip_enqueue_layout_css() {
         );
     }
 
+    if ( in_array('stats_section', $layouts) ) {
+
+        wp_enqueue_style(
+            'stats-css',
+            get_template_directory_uri() . '/assets/css/stats.css',
+            [],
+            '1.0'
+        );
+
+        wp_enqueue_script(
+            'stats-js',
+            get_template_directory_uri() . '/assets/js/stats.js',
+            [],
+            '1.0',
+            true
+        );
+    }
+
 }
 add_action('wp_enqueue_scripts', 'acf_vip_enqueue_layout_css');
 
