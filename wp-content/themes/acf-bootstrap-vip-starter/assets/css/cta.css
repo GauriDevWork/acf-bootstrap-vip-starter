@@ -1,25 +1,25 @@
 .section-cta {
-    position: relative;
+	position: relative;
 }
 
 /* Overlay only when image exists */
 .cta-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 1;
+	position: absolute;
+	inset: 0;
+	background: rgba(0,0,0,0.5);
+	z-index: 1;
 }
 
 /* Content above overlay */
 .section-cta .container {
-    z-index: 2;
+	z-index: 2;
 }
 
 /* Spacing */
 .section-cta .cta-title {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .section-cta .cta-text {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
