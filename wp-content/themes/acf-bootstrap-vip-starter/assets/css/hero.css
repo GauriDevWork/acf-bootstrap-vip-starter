@@ -1,87 +1,87 @@
 .section-hero {
-    position: relative;
+	position: relative;
 }
 
 .hero-wrapper {
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
 
 /* SAME HEIGHT FOR BOTH */
 .hero-wrapper img,
 .hero-wrapper .swiper {
-    height: 70vh;
-    width: 100%;
-    object-fit: cover;
+	height: 70vh;
+	width: 100%;
+	object-fit: cover;
 }
 
 /* OVERLAY */
 .hero-wrapper::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 1;
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0,0,0,0.4);
+	z-index: 1;
 }
 
 /* CONTENT */
 .hero-content {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    color: #fff;
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	color: #fff;
 }
 
 /* NAV */
 .swiper-button-prev,
 .swiper-button-next {
-    color: #fff;
+	color: #fff;
 }
 
 .swiper-pagination-bullet {
-    background: #fff;
+	background: #fff;
 }
 
 /* NAVIGATION FIX */
 .hero-wrapper .swiper-button-prev,
 .hero-wrapper .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 3;
 
-    width: 45px;
-    height: 45px;
+	width: 45px;
+	height: 45px;
 
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-    color: #fff;
+	color: #fff;
 }
 
 /* LEFT POSITION */
 .hero-wrapper .swiper-button-prev {
-    left: 20px;
+	left: 20px;
 }
 
 /* RIGHT POSITION */
 .hero-wrapper .swiper-button-next {
-    right: 20px;
+	right: 20px;
 }
 
 /* HOVER EFFECT */
 .hero-wrapper .swiper-button-prev:hover,
 .hero-wrapper .swiper-button-next:hover {
-    background: rgba(0, 0, 0, 0.8);
+	background: rgba(0, 0, 0, 0.8);
 }
 
 /* ICON SIZE */
 .hero-wrapper .swiper-button-prev::after,
 .hero-wrapper .swiper-button-next::after {
-    font-size: 18px;
-    font-weight: bold;
+	font-size: 18px;
+	font-weight: bold;
 }
