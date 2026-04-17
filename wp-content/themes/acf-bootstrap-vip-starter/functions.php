@@ -13,6 +13,25 @@ function acf_vip_theme_setup() {
 }
 add_action( 'after_setup_theme', 'acf_vip_theme_setup' );
 
+
+/**
+ * Registers the theme's navigation menus.
+ *
+ * Registers the Primary Menu and Footer Menu for use in the theme.
+ *
+ * @since 1.0.0
+ */
+function acf_vip_register_menus() {
+
+	register_nav_menus(
+		array(
+			'primary' => __( 'Primary Menu', 'acf-bootstrap-vip-starter' ),
+			'footer'  => __( 'Footer Menu', 'acf-bootstrap-vip-starter' ),
+		)
+	);
+}
+add_action( 'after_setup_theme', 'acf_vip_register_menus' );
+
 /**
  * Enqueue assets for the theme.
  *
@@ -318,3 +337,13 @@ function acf_vip_bg_class( $bg ) {
 
 	return $map[ $bg ] ?? 'bg-light';
 }
+
+/**
+ * Hide admin bar on front-end.
+ *
+ * @since 1.0.0
+ */
+function acf_vip_hide_admin_bar() {
+	show_admin_bar( false );
+}
+add_action( 'after_setup_theme', 'acf_vip_hide_admin_bar' );
