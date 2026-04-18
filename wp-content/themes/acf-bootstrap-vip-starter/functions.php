@@ -68,6 +68,20 @@ function acf_vip_enqueue_assets() {
 	);
 
 	wp_enqueue_style(
+		'font-awesome',
+		get_template_directory_uri() . '/assets/css/all.min.css',
+		array(),
+		'6.5.0'
+	);
+
+	wp_enqueue_style(
+		'header-css',
+		get_template_directory_uri() . '/assets/css/header.css',
+		array(),
+		'1.0'
+	);
+
+	wp_enqueue_style(
 		'custom-style',
 		get_template_directory_uri() . '/assets/css/custom.css',
 		array( 'bootstrap' ),
@@ -98,6 +112,7 @@ function acf_vip_enqueue_assets() {
 		$theme_version,
 		true
 	);
+	
 }
 add_action( 'wp_enqueue_scripts', 'acf_vip_enqueue_assets' );
 

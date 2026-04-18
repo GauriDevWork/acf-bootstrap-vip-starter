@@ -1,7 +1,11 @@
 <?php
 $layout    = get_field( 'header_layout', 'option' ) ? get_field( 'header_layout', 'option' ) : 'layout1';
+$show_topbar = get_field( 'show_topbar', 'option' );
 $sticky    = get_field( 'sticky_header', 'option' );
 $container = get_field( 'container_type', 'option' ) ? get_field( 'container_type', 'option' ) : 'container';
+if ( ! $layout ) {
+    $layout = 'layout1';
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -15,6 +19,10 @@ $container = get_field( 'container_type', 'option' ) ? get_field( 'container_typ
 		Skip to content
 	</a>     
 	<header class="site-header <?php echo $sticky ? 'is-sticky' : ''; ?>">
+
+		<?php if ( $show_topbar ) : ?>
+			<?php get_template_part( 'template-parts/header/topbar' ); ?>
+		<?php endif; ?>
 
 		<?php get_template_part( 'template-parts/header/header', $layout ); ?>
 

@@ -51,27 +51,6 @@
             "save_options": 0
         },
         {
-            "key": "field_69e16f7f9271b",
-            "label": "Sticky Header",
-            "name": "sticky_header",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_69e16f979271c",
             "label": "Show Topbar",
             "name": "show_topbar",
@@ -161,7 +140,7 @@
                     "label": "Icon",
                     "name": "icon",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "select",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -170,12 +149,24 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": "",
+                    "choices": {
+                        "fab fa-facebook-f": "Facebook",
+                        "fab fa-twitter": "Twitter",
+                        "fab fa-instagram": "Instagram",
+                        "fab fa-linkedin-in": "LinkedIn",
+                        "fab fa-youtube": "YouTube",
+                        "fab fa-whatsapp": "WhatsApp"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
                     "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "create_options": 0,
+                    "save_options": 0,
                     "parent_repeater": "field_69e16fd79271f"
                 },
                 {
@@ -199,53 +190,72 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_69e16fd79271f"
-                },
-                {
-                    "key": "field_69e1700992722",
-                    "label": "Header Logo",
-                    "name": "header_logo",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "allow_in_bindings": 0,
-                    "preview_size": "medium",
-                    "parent_repeater": "field_69e16fd79271f"
-                },
-                {
-                    "key": "field_69e1702892723",
-                    "label": "Header CTA Button",
-                    "name": "header_cta_button",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "allow_in_bindings": 0,
-                    "parent_repeater": "field_69e16fd79271f"
                 }
             ]
+        },
+        {
+            "key": "field_69e2d3f31caee",
+            "label": "Header Logo",
+            "name": "header_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_69e1702892723",
+            "label": "Header CTA Button",
+            "name": "header_cta_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_69e16f7f9271b",
+            "label": "Sticky Header",
+            "name": "sticky_header",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_69e1704a2204e",
@@ -298,5 +308,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1776382060
+    "modified": 1776474641
 }
