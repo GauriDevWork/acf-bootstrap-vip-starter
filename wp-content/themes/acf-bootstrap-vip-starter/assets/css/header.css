@@ -1,22 +1,177 @@
-/* Topbar */
-.topbar {
-    background: #000;
-    color: #fff;
-    padding: 5px 0;
-    font-size: 14px;
+/* =========================
+   HEADER BASE
+========================= */
+.site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    position: relative;
+    z-index: 9999;
 }
 
-/* Mobile */
-.mobile-menu {
+.site-header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* =========================
+   CONTAINER FIX
+========================= */
+.site-header .container-fluid {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+
+/* =========================
+   LOGO
+========================= */
+.site-header .header-logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* =========================
+   MENU (DESKTOP)
+========================= */
+.site-header .header-menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header .header-menu ul li {
+    position: relative;
+}
+
+.site-header .header-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* =========================
+   SUBMENU (DESKTOP)
+========================= */
+.site-header .header-menu .sub-menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
     background: #fff;
+    padding: 10px 0;
+    min-width: 200px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-.mobile-menu.active {
+.site-header .header-menu li:hover > .sub-menu {
     display: block;
 }
 
-/* Hamburger */
+.site-header .header-menu .sub-menu li {
+    padding: 5px 15px;
+}
+
+/* =========================
+   SUBMENU ARROW
+========================= */
+.site-header .menu-item-has-children > a::after {
+    content: "";
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 6px;
+    transform: rotate(45deg);
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+    background: #000;
+    color: #fff;
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+.topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+.fab::before {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400;
+}
+
+.fas::before,
+.fa-solid::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900;
+}
+
+.topbar .topbar-right a {
+    margin-left: 12px;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.topbar .topbar-right a:hover {
+    color: #007bff;
+}
+
+.topbar .topbar-right a i {
+    display: inline-block;
+   /* font-family: "Font Awesome 6 Brands" !important; */
+    font-weight: 400;
+}
+
+
+/* =========================
+   CTA
+========================= */
+.header-cta .btn {
+    padding: 8px 18px;
+}
+
+/* =========================
+   LAYOUT 2 (CENTERED)
+========================= */
+.header-layout-2 {
+    text-align: center;
+}
+
+/* =========================
+   LAYOUT 3 (SPLIT)
+========================= */
+.header-layout-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-layout-3 .header-logo {
+    flex: 1;
+    text-align: center;
+}
+
+/* =========================
+   MOBILE TOGGLE
+========================= */
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+}
+
 .mobile-toggle span {
     display: block;
     width: 25px;
@@ -25,9 +180,64 @@
     margin: 4px 0;
 }
 
-/* Sticky */
+/* =========================
+   MOBILE MENU
+========================= */
+.mobile-menu {
+    display: none;
+    background: #fff;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-menu li {
+    margin-bottom: 10px;
+}
+
+/* =========================
+   MOBILE SUBMENU
+========================= */
+.mobile-menu .sub-menu {
+    display: none;
+    padding-left: 15px;
+}
+
+.mobile-menu .submenu-open > .sub-menu {
+    display: block;
+}
+
+/* =========================
+   STICKY
+========================= */
 .site-header.is-sticky {
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 9999;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 991px) {
+
+    .site-header .header-menu {
+        display: none !important;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .header-inner {
+        flex-wrap: wrap;
+    }
 }

@@ -5,10 +5,23 @@ $container = get_field( 'container_type', 'option' ) ?: 'container';
 ?>
 
 <div class="<?php echo esc_attr( $container ); ?>">
-	<div class="header-inner d-flex justify-content-between align-items-center">
+	<div class="header-layout-3 d-flex align-items-center justify-content-between">
 
-		<!-- LOGO -->
-		<div class="header-logo">
+		<!-- LEFT MENU -->
+		<nav class="header-menu d-none d-lg-block">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'container'      => false,
+					'menu_class'     => 'menu',
+				)
+			);
+			?>
+		</nav>
+
+		<!-- LOGO CENTER -->
+		<div class="header-logo text-center">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<?php
 				if ( $logo ) {
@@ -20,27 +33,14 @@ $container = get_field( 'container_type', 'option' ) ?: 'container';
 			</a>
 		</div>
 
-		<!-- MENU -->
-		<nav class="header-menu d-none d-lg-block">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'container'      => false,
-					'menu_class'     => 'menu d-flex',
-				)
-			);
-			?>
-		</nav>
-
-		<!-- CTA -->
-		<?php if ( $cta && ! empty( $cta['url'] ) ) : ?>
-			<div class="header-cta d-none d-lg-block">
+		<!-- CTA RIGHT -->
+		<div class="header-cta d-none d-lg-block">
+			<?php if ( $cta && ! empty( $cta['url'] ) ) : ?>
 				<a href="<?php echo esc_url( $cta['url'] ); ?>" class="btn btn-primary">
 					<?php echo esc_html( $cta['title'] ); ?>
 				</a>
-			</div>
-		<?php endif; ?>
+			<?php endif; ?>
+		</div>
 
 		<!-- MOBILE TOGGLE -->
 		<div class="mobile-toggle d-lg-none">

@@ -1,39 +1,45 @@
 <?php
-$show_topbar = get_field( 'show_topbar', 'option' );
-$email       = get_field( 'email', 'option' );
-$phone       = get_field( 'phone', 'option' );
+$logo      = get_field( 'header_logo', 'option' );
+$container = get_field( 'container_type', 'option' ) ?: 'container';
 ?>
 
-<?php if ( $show_topbar ) : ?>
-<div class="topbar">
-	<div class="container d-flex justify-content-between">
+<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="header-layout-2 text-center">
 
-		<div>
-			<?php if ( $email ) : ?> 
-				<?php echo esc_html( $email ); ?> 
-			<?php endif; ?>
-			<?php if ( $phone ) : ?> 
-				| <?php echo esc_html( $phone ); ?> 
-			<?php endif; ?>
+		<!-- LOGO -->
+		<div class="header-logo mb-2">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<?php
+				if ( $logo ) {
+					echo wp_get_attachment_image( is_array( $logo ) ? $logo['ID'] : $logo, 'full' );
+				} else {
+					bloginfo( 'name' );
+				}
+				?>
+			</a>
 		</div>
 
-		<div class="social">
-			<?php if ( have_rows( 'social_links', 'option' ) ) : ?>
-				<?php
-				while ( have_rows( 'social_links', 'option' ) ) :
-					the_row();
-					?>
-					<a href="<?php the_sub_field( 'link' ); ?>">
-						<?php the_sub_field( 'icon' ); ?>
-					</a>
-					<?php
-					endwhile;
-				?>
-			<?php endif; ?>
+		<!-- MENU -->
+		<nav class="header-menu">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'container'      => false,
+					'menu_class'     => 'menu justify-content-center',
+				)
+			);
+			?>
+		</nav>
+
+		<!-- MOBILE TOGGLE -->
+		<div class="mobile-toggle d-lg-none">
+			<span></span>
+			<span></span>
+			<span></span>
 		</div>
 
 	</div>
 </div>
-<?php endif; ?>
 
-<?php get_template_part( 'template-parts/header/header', 'layout1' ); ?>
+<?php get_template_part( 'template-parts/header/mobile-menu' ); ?>
