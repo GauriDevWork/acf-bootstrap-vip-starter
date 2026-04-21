@@ -10,6 +10,8 @@ function acf_vip_theme_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'gallery', 'caption' ) );
+	add_theme_support( 'widgets' );
+	add_theme_support( 'widgets-block-editor' );
 }
 add_action( 'after_setup_theme', 'acf_vip_theme_setup' );
 
@@ -31,6 +33,44 @@ function acf_vip_register_menus() {
 	);
 }
 add_action( 'after_setup_theme', 'acf_vip_register_menus' );
+
+
+/**
+ * Registers footer widgets.
+ * 
+ * @return void
+ */
+function acf_vip_footer_sidebars() {
+
+    register_sidebar([
+        'name' => 'Footer Column 1',
+        'id'   => 'footer-1',
+		'before_widget' => '<div class="footer-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
+    ]);
+
+    register_sidebar([
+        'name' => 'Footer Column 2',
+        'id'   => 'footer-2',
+		'before_widget' => '<div class="footer-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
+    ]);
+
+    register_sidebar([
+        'name' => 'Footer Column 3',
+        'id'   => 'footer-3',
+		'before_widget' => '<div class="footer-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
+    ]);
+
+}
+add_action('widgets_init', 'acf_vip_footer_sidebars');
 
 /**
  * Enqueue assets for the theme.
@@ -77,6 +117,13 @@ function acf_vip_enqueue_assets() {
 	wp_enqueue_style(
 		'header-css',
 		get_template_directory_uri() . '/assets/css/header.css',
+		array(),
+		'1.0'
+	);
+
+	wp_enqueue_style(
+		'footer-css',
+		get_template_directory_uri() . '/assets/css/footer.css',
 		array(),
 		'1.0'
 	);
