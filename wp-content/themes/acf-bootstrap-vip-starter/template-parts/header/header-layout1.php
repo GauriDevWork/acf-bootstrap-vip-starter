@@ -1,7 +1,7 @@
 <?php
 $logo      = get_field( 'header_logo', 'option' );
 $cta       = get_field( 'header_cta_button', 'option' );
-$container = get_field( 'container_type', 'option' ) ?: 'container';
+$container = get_field( 'container_type', 'option' ) ? get_field( 'container_type', 'option' ) : 'container';
 ?>
 
 <div class="<?php echo esc_attr( $container ); ?>">

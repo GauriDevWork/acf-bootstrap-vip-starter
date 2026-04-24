@@ -1,10 +1,10 @@
 <?php
-$layout    = get_field( 'header_layout', 'option' ) ? get_field( 'header_layout', 'option' ) : 'layout1';
+$layout      = get_field( 'header_layout', 'option' ) ? get_field( 'header_layout', 'option' ) : 'layout1';
 $show_topbar = get_field( 'show_topbar', 'option' );
-$sticky    = get_field( 'sticky_header', 'option' );
-$container = get_field( 'container_type', 'option' ) ? get_field( 'container_type', 'option' ) : 'container';
+$sticky      = get_field( 'sticky_header', 'option' );
+$container   = get_field( 'container_type', 'option' ) ? get_field( 'container_type', 'option' ) : 'container';
 if ( ! $layout ) {
-    $layout = 'layout1';
+	$layout = 'layout1';
 }
 ?>
 <!DOCTYPE html>

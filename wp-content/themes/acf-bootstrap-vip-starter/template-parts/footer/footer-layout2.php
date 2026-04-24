@@ -1,6 +1,6 @@
 <?php
-$copy = get_field( 'copyright_text', 'option' );
-$container = get_field( 'container_type', 'option' ) ?: 'container';
+$copy      = get_field( 'copyright_text', 'option' );
+$container = get_field( 'container_type', 'option' ) ? get_field( 'container_type', 'option' ) : 'container';
 ?>
 
 <div class="<?php echo esc_attr( $container ); ?>">
@@ -22,10 +22,12 @@ $container = get_field( 'container_type', 'option' ) ?: 'container';
 		<div class="col-lg-3">
 			<h5>Quick Links</h5>
 			<?php
-			wp_nav_menu([
-				'theme_location' => 'footer',
-				'container'      => false,
-			]);
+			wp_nav_menu(
+				array(
+					'theme_location' => 'footer',
+					'container'      => false,
+				)
+			);
 			?>
 		</div>
 
@@ -39,7 +41,10 @@ $container = get_field( 'container_type', 'option' ) ?: 'container';
 
 		<div class="footer-social">
 			<?php if ( have_rows( 'footer_social_links', 'option' ) ) : ?>
-				<?php while ( have_rows( 'footer_social_links', 'option' ) ) : the_row(); ?>
+				<?php
+				while ( have_rows( 'footer_social_links', 'option' ) ) :
+					the_row();
+					?>
 					<a href="<?php echo esc_url( get_sub_field( 'link' ) ); ?>">
 						<i class="<?php echo esc_attr( get_sub_field( 'icon' ) ); ?>"></i>
 					</a>
