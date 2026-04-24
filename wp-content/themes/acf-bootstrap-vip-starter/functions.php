@@ -37,40 +37,45 @@ add_action( 'after_setup_theme', 'acf_vip_register_menus' );
 
 /**
  * Registers footer widgets.
- * 
+ *
  * @return void
  */
 function acf_vip_footer_sidebars() {
 
-    register_sidebar([
-        'name' => 'Footer Column 1',
-        'id'   => 'footer-1',
-		'before_widget' => '<div class="footer-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h5>',
-		'after_title'   => '</h5>',
-    ]);
+	register_sidebar(
+		array(
+			'name'          => 'Footer Column 1',
+			'id'            => 'footer-1',
+			'before_widget' => '<div class="footer-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5>',
+			'after_title'   => '</h5>',
+		)
+	);
 
-    register_sidebar([
-        'name' => 'Footer Column 2',
-        'id'   => 'footer-2',
-		'before_widget' => '<div class="footer-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h5>',
-		'after_title'   => '</h5>',
-    ]);
+	register_sidebar(
+		array(
+			'name'          => 'Footer Column 2',
+			'id'            => 'footer-2',
+			'before_widget' => '<div class="footer-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5>',
+			'after_title'   => '</h5>',
+		)
+	);
 
-    register_sidebar([
-        'name' => 'Footer Column 3',
-        'id'   => 'footer-3',
-		'before_widget' => '<div class="footer-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h5>',
-		'after_title'   => '</h5>',
-    ]);
-
+	register_sidebar(
+		array(
+			'name'          => 'Footer Column 3',
+			'id'            => 'footer-3',
+			'before_widget' => '<div class="footer-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5>',
+			'after_title'   => '</h5>',
+		)
+	);
 }
-add_action('widgets_init', 'acf_vip_footer_sidebars');
+add_action( 'widgets_init', 'acf_vip_footer_sidebars' );
 
 /**
  * Enqueue assets for the theme.
@@ -159,7 +164,6 @@ function acf_vip_enqueue_assets() {
 		$theme_version,
 		true
 	);
-	
 }
 add_action( 'wp_enqueue_scripts', 'acf_vip_enqueue_assets' );
 
@@ -409,3 +413,75 @@ function acf_vip_hide_admin_bar() {
 	show_admin_bar( false );
 }
 add_action( 'after_setup_theme', 'acf_vip_hide_admin_bar' );
+
+add_action( 'wp_head', 'acf_vip_global_styles' );
+
+function acf_vip_global_styles() {
+		$color      = get_field( 'colors', 'option' );
+		$primary    = $color[ 'primary_color' ] ?: '#0d6efd';
+		$secondary  = $color[ 'secondary_color' ] ?: '#6c757d';
+		$text       = $color[ 'text_color' ] ?: '#212529';
+
+		$buttons    = get_field( 'buttons', 'option' );
+		$radius     = $buttons[ 'button_radius' ] ?: '4';
+		$padding    = $buttons[ 'button_padding' ] ?: '10px 20px';
+
+		$typography = get_field( 'typography', 'option' );
+		$font_size  = $typography[ 'base_font_size' ] ?: '16';
+		$heading_w  = $typography[ 'heading_weight' ] ?: '600';
+		$h1         = $typography[ 'h1_font_size' ] ?: '40';
+		$h2         = $typography[ 'h2_font_size' ] ?: '32';
+		$h3         = $typography[ 'h3_font_size' ] ?: '28';
+		$h4         = $typography[ 'h4_font_size' ] ?: '24';
+		$h5         = $typography[ 'h5_font_size' ] ?: '20';
+		$h6         = $typography[ 'h6_font_size' ] ?: '16';
+    ?>
+
+    <style>
+        :root {
+            --primary: <?php echo esc_attr( $primary ); ?>;
+            --secondary: <?php echo esc_attr( $secondary ); ?>;
+            --text-color: <?php echo esc_attr( $text ); ?>;
+
+            --btn-radius: <?php echo esc_attr( $radius ); ?>px;
+            --btn-padding: <?php echo esc_attr( $padding ); ?>;
+
+            --base-font-size: <?php echo esc_attr( $font_size ); ?>px;
+            --heading-weight: <?php echo esc_attr( $heading_w ); ?>;
+        }
+
+        body {
+            color: var( --text-color );
+            font-size: var( --base-font-size );
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-weight: var( --heading-weight );
+        }
+
+		h1 { font-size: <?php echo esc_attr( $h1 ); ?>px; }
+
+		h2 { font-size: <?php echo esc_attr( $h2 ); ?>px; }
+
+		h3 { font-size: <?php echo esc_attr( $h3 ); ?>px; }
+
+		h4 { font-size: <?php echo esc_attr( $h4 ); ?>px; }
+
+		h5 { font-size: <?php echo esc_attr( $h5 ); ?>px; }
+
+		h6 { font-size: <?php echo esc_attr( $h6 ); ?>px; }
+
+		a {
+			color: var( --primary );
+		}
+        .btn {
+            background: var( --primary );
+            border-radius: var( --btn-radius );
+            padding: var( --btn-padding );
+        }
+        .btn:hover {
+			background: var( --secondary );
+        }
+    </style>
+	<?php
+}

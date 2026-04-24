@@ -1,8 +1,8 @@
 <?php
-$logo   = get_field( 'footer_logo', 'option' );
-$text   = get_field( 'footer_description', 'option' );
-$copy   = get_field( 'copyright_text', 'option' );
-$container = get_field( 'container_type', 'option' ) ?: 'container';
+$logo      = get_field( 'footer_logo', 'option' );
+$text      = get_field( 'footer_description', 'option' );
+$copy      = get_field( 'copyright_text', 'option' );
+$container = get_field( 'container_type', 'option' ) ? get_field( 'container_type', 'option' ) : 'container';
 ?>
 
 <div class="<?php echo esc_attr( $container ); ?>">
@@ -19,30 +19,35 @@ $container = get_field( 'container_type', 'option' ) ?: 'container';
 		</div>
 
 		<div class="col-lg-4">
-			<?php 
-                if ( is_active_sidebar( 'footer-1' ) ) {
-                    dynamic_sidebar( 'footer-1' );
-                } 
-            ?>
+			<?php
+			if ( is_active_sidebar( 'footer-1' ) ) {
+				dynamic_sidebar( 'footer-1' );
+			}
+			?>
 		</div>
 
 		<div class="col-lg-4">
-			<?php 
-                if ( is_active_sidebar( 'footer-2' ) ) {
-                    dynamic_sidebar( 'footer-2' );
-                } 
-            ?>
+			<?php
+			if ( is_active_sidebar( 'footer-2' ) ) {
+				dynamic_sidebar( 'footer-2' );
+			}
+			?>
 		</div>
 
 	</div>
 
 	<div class="footer-social mt-4">
 		<?php if ( have_rows( 'footer_social_links', 'option' ) ) : ?>
-			<?php while ( have_rows( 'footer_social_links', 'option' ) ) : the_row(); ?>
+			<?php
+			while ( have_rows( 'footer_social_links', 'option' ) ) :
+				the_row();
+				?>
 				<a href="<?php echo esc_url( get_sub_field( 'link' ) ); ?>">
 					<i class="<?php echo esc_attr( get_sub_field( 'icon' ) ); ?>"></i>
 				</a>
-			<?php endwhile; ?>
+				<?php
+			endwhile;
+			?>
 		<?php endif; ?>
 	</div>
 

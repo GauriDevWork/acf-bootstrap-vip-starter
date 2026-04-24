@@ -1,8 +1,8 @@
 <?php
-$logo = get_field( 'footer_logo', 'option' );
-$text = get_field( 'footer_description', 'option' );
-$copy = get_field( 'copyright_text', 'option' );
-$container = get_field( 'container_type', 'option' ) ?: 'container';
+$logo      = get_field( 'footer_logo', 'option' );
+$text      = get_field( 'footer_description', 'option' );
+$copy      = get_field( 'copyright_text', 'option' );
+$container = get_field( 'container_type', 'option' ) ? get_field( 'container_type', 'option' ) : 'container';
 ?>
 
 <div class="<?php echo esc_attr( $container ); ?> text-center">
@@ -20,17 +20,22 @@ $container = get_field( 'container_type', 'option' ) ?: 'container';
 	<!-- MENU -->
 	<div class="footer-menu mb-3">
 		<?php
-		wp_nav_menu([
-			'theme_location' => 'footer',
-			'container'      => false,
-		]);
+		wp_nav_menu(
+			array(
+				'theme_location' => 'footer',
+				'container'      => false,
+			)
+		);
 		?>
 	</div>
 
 	<!-- SOCIAL -->
 	<div class="footer-social mb-3">
 		<?php if ( have_rows( 'footer_social_links', 'option' ) ) : ?>
-			<?php while ( have_rows( 'footer_social_links', 'option' ) ) : the_row(); ?>
+			<?php
+			while ( have_rows( 'footer_social_links', 'option' ) ) :
+				the_row();
+				?>
 				<a href="<?php echo esc_url( get_sub_field( 'link' ) ); ?>">
 					<i class="<?php echo esc_attr( get_sub_field( 'icon' ) ); ?>"></i>
 				</a>

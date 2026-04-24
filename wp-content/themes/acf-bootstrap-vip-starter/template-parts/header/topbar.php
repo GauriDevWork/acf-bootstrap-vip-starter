@@ -21,10 +21,10 @@ $phone = get_field( 'phone', 'option' );
 				<?php
 				while ( have_rows( 'social_links', 'option' ) ) :
 					the_row();
-					$link = get_sub_field( 'link' );
-					$icon = get_sub_field( 'icon' );
+					$social_link = get_sub_field( 'link' );
+					$icon        = get_sub_field( 'icon' );
 					?>
-					<a href="<?php echo esc_url( $link ); ?>" target="_blank">
+					<a href="<?php echo esc_url( $social_link ); ?>" target="_blank">
 						<i class="<?php echo esc_attr( $icon ); ?>"></i>
 					</a>
 				<?php endwhile; ?>
