@@ -1,11 +1,12 @@
 <?php
+/**
+ * Top bar layout.
+ */
 $email = get_field( 'email', 'option' );
 $phone = get_field( 'phone', 'option' );
 ?>
-
 <div class="topbar">
 	<div class="container d-flex justify-content-between align-items-center">
-
 		<div class="topbar-left">
 			<?php if ( $email ) : ?>
 				<span><?php echo esc_html( $email ); ?></span>
@@ -30,6 +31,5 @@ $phone = get_field( 'phone', 'option' );
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
-
 	</div>
 </div>

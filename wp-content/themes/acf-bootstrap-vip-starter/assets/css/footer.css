@@ -1,7 +1,11 @@
+/* =========================
+   FOOTER BASE
+========================= */
+
 .site-footer {
     background: #111;
     color: #fff;
-    padding: 50px 0;
+    padding: 60px 0 30px;
 }
 
 .site-footer a {
@@ -9,13 +13,90 @@
     text-decoration: none;
 }
 
+.site-footer a:hover {
+    color: #0d6efd;
+}
+
+/* =========================
+   FOOTER GRID
+========================= */
+
+.site-footer .row {
+    margin-bottom: 20px;
+}
+
+.footer-widget {
+    margin-bottom: 20px;
+}
+
+.footer-widget h5 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* =========================
+   FOOTER MENU
+========================= */
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 5px;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
 .footer-social a {
     margin-right: 10px;
     font-size: 14px;
+    display: inline-block;
 }
+
+.footer-social a:hover {
+    color: #0d6efd;
+}
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
 
 .footer-bottom {
     margin-top: 20px;
     border-top: 1px solid #333;
     padding-top: 15px;
+    font-size: 14px;
+}
+
+/* =========================
+   CENTERED FOOTER (LAYOUT 3)
+========================= */
+
+.site-footer.text-center .footer-menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.site-footer.text-center .footer-social {
+    text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+
+    .site-footer .row {
+        text-align: center;
+    }
+
+    .footer-widget {
+        margin-bottom: 30px;
+    }
 }
