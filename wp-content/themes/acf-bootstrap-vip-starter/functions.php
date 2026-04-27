@@ -164,6 +164,14 @@ function acf_vip_enqueue_assets() {
 		$theme_version,
 		true
 	);
+
+	wp_enqueue_script(
+		'header-js',
+		get_template_directory_uri() . '/assets/js/header.js',
+		array(),
+		$theme_version,
+		true
+	);
 }
 add_action( 'wp_enqueue_scripts', 'acf_vip_enqueue_assets' );
 
@@ -484,4 +492,21 @@ function acf_vip_global_styles() {
         }
     </style>
 	<?php
+}
+
+/**
+ * Add submenu array to the main menu
+ */
+add_filter( 'walker_nav_menu_start_el', 'acf_vip_add_submenu_toggle', 10, 4 );
+
+function acf_vip_add_submenu_toggle( $item_output, $item, $depth, $args ) {
+
+    // Check if menu item has children
+    if ( in_array( 'menu-item-has-children', $item->classes ) ) {
+
+        // Add toggle button AFTER link
+        $item_output .= '<span class="submenu-toggle">▼</span>';
+    }
+
+    return $item_output;
 }
