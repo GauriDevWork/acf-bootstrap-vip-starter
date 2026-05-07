@@ -1,0 +1,38 @@
+.service-detail img {
+    float: left;
+    margin-right: 100px;
+    margin-bottom: 20px;
+    width: 50%;
+    display: block;
+    border-radius: 10px;
+}
+
+.service-detail > .container {
+    clear: both;
+    overflow: hidden;
+}
+
+.service-detail > .container > *:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 1599px) {
+    .service-detail img {
+        margin-right: 70px;
+    }
+}
+
+@media (max-width: 1399px) {
+    .service-detail img {
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 991px) {
+    .service-detail img {
+        float: none;
+        margin-right: 0px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+}

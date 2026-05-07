@@ -1,0 +1,114 @@
+/* Sidebar */
+.sidebar-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.my-theme-blog-sidebar .wp-block-heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+    line-height: normal;
+}
+
+.sidebar .tag-cloud {
+    margin-bottom: 30px;
+    margin-left: -6px;
+}
+
+.wp-block-group ul li {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+
+.wp-block-group ul {
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+
+.wp-block-group ul li::before {
+    top: 11px;
+    left: -25px;
+    width: 10px;
+    height: 10px;
+}
+
+.my-theme-blog-sidebar .widget_search {
+    margin-bottom: 30px;
+}
+
+.post-meta .post-author {
+    background: #ffeeee;
+    padding: 2px 20px;
+    margin: 0px 6px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin-right: 10px;
+    background: #C31F27;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #0056b3;
+}
+
+.my-theme-blog-sidebar .wp-block-search__inside-wrapper {
+    position: relative;
+}
+
+.my-theme-blog-sidebar .wp-block-search__inside-wrapper .wp-block-search__input {
+    width: 100%;
+    border-radius: 240px !important;
+    padding: 16px 50px 16px 20px !important;
+}
+
+.my-theme-blog-sidebar .wp-block-search__inside-wrapper .wp-block-search__button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    background: no-repeat;
+    border: none;
+    height: 100%;
+    width: 50px;
+}
+
+.my-theme-blog-sidebar .wp-block-search__inside-wrapper .wp-block-search__button svg * {
+    stroke: var(--primary);
+}
+
+.my-theme-blog-sidebar .wp-block-search__inside-wrapper .wp-block-search__button svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* Example: Custom colors for different social media */
+.social-links a.facebook {
+    background: #3b5998;
+}
+
+.social-links a.twitter {
+    background: #1da1f2;
+}
+
+.social-links a.linkedin {
+    background: #0077b5;
+}
+
+.social-links a.instagram {
+    background: #e4405f;
+}
