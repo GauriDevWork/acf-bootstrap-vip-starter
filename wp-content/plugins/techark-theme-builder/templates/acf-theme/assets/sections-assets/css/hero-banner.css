@@ -1,0 +1,199 @@
+.{{THEME_PREFIX}}-hero-banner {
+    padding-top: 260px;
+    padding-bottom: 230px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+    background-size: cover;
+    position: relative;
+    background-color: var(--default_banner_bg_color);
+    background-position: center;
+}
+
+.{{THEME_PREFIX}}-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* left: -5px;
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+    opacity: 0.95;
+    transform: rotate(-90deg); */
+    height: 100%;
+    width: 928px;
+    border-radius: 0 0 0 30px;
+    opacity: 0.95;
+    background: linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+.{{THEME_PREFIX}}-hero-banner .{{THEME_PREFIX}}-content {
+    max-width: 590px;
+    position: relative;
+    z-index: 1;
+}
+
+.{{THEME_PREFIX}}-hero-banner .{{THEME_PREFIX}}-content p {
+    font-size: 20px;
+}
+
+.{{THEME_PREFIX}}-hero-banner .{{THEME_PREFIX}}-content p:last-child {
+    margin-bottom: 0;
+}
+
+.{{THEME_PREFIX}}-hero-banner .{{THEME_PREFIX}}-content .h1 {
+    padding-right: 30px;
+    margin-bottom: 16px;
+}
+
+.{{THEME_PREFIX}}-hero-banner .big-title {
+    font-weight: 600 !important;
+    font-size: 218px;
+    line-height: 1;
+    color: var(--white);
+    position: absolute;
+    z-index: 1;
+    white-space: nowrap;
+    margin-bottom: 0;
+    left: 34.5%;
+    bottom: -60px;
+}
+
+.default-ticker {
+    font-size: 50px;
+    position: absolute;
+    white-space: nowrap;
+    margin-bottom: 0;
+    /* bottom: -80px; */
+    bottom: -60px;
+    left: 34%;
+}
+
+.trust-large-text.marquee {
+    display: inline-block;
+}
+
+.default-ticker1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transform: rotate(-1.3deg);
+    font-size: 50px;
+}
+
+.default-ticker .trust-large-text {
+    white-space: nowrap;
+    margin-bottom: 0;
+    font-size: 218px;
+    font-weight: 600 !important;
+    color: var(--white);
+    line-height: 1;
+}
+
+@media(max-width:1799px) {
+    .{{THEME_PREFIX}}-hero-banner {
+        padding-top: 230px;
+        padding-bottom: 200px;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner .big-title {
+        font-size: 200px;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner::before {
+        width: 800px;
+    }
+}
+
+@media(max-width:1599px) {
+    .{{THEME_PREFIX}}-hero-banner .big-title {
+        font-size: 180px;
+        bottom: -50px;
+    }
+
+    .default-ticker .trust-large-text {
+        font-size: 180px;
+    }
+
+    .default-ticker {
+        bottom: -50px;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner {
+        padding-bottom: 180px;
+    }
+}
+
+@media(max-width:1399px) {
+    .{{THEME_PREFIX}}-hero-banner .big-title {
+        font-size: 160px;
+        bottom: -40px;
+    }
+
+    .default-ticker .trust-large-text {
+        font-size: 160px;
+    }
+
+    .default-ticker {
+        bottom: -42px;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner::before {
+        width: 720px;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner .{{THEME_PREFIX}}-content .h1 {
+        padding-right: 150px;
+    }
+}
+
+@media(max-width:991px) {
+    .{{THEME_PREFIX}}-hero-banner {
+        padding-top: 200px;
+        padding-bottom: 150px;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner .{{THEME_PREFIX}}-content .h1 {
+        padding-right: 0;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner .big-title {
+        font-size: 140px;
+        bottom: -40px;
+    }
+
+    .default-ticker .trust-large-text {
+        font-size: 140px;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner .{{THEME_PREFIX}}-content {
+        max-width: 520px;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner::before {
+        width: 620px;
+    }
+}
+
+@media(max-width:767px) {
+    .{{THEME_PREFIX}}-hero-banner {
+        padding-top: 150px;
+        padding-bottom: 120px;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner .big-title {
+        font-size: 100px;
+        bottom: -30px;
+    }
+
+    .default-ticker .trust-large-text {
+        font-size: 100px;
+    }
+
+    .default-ticker {
+        bottom: -30px;
+        left: 15%;
+    }
+
+    .{{THEME_PREFIX}}-hero-banner .{{THEME_PREFIX}}-content p {
+        font-size: 18px;
+    }
+}

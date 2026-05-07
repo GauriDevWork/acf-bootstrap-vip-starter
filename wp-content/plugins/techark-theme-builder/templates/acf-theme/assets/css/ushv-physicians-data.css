@@ -1,0 +1,300 @@
+.{{THEME_PREFIX}}-physicians-data-block {
+    padding: 50px;
+    border-radius: 20px;
+    background: var(--default_banner_bg_color);
+    /* overflow: hidden; */
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.{{THEME_PREFIX}}-physicians-data-block .img-block img {
+    border-radius: 15px;
+    margin-bottom: 0;
+    position: sticky;
+    top: 160px;
+}
+
+.{{THEME_PREFIX}}-physicians-data-block .img-block {
+    width: 405px;
+}
+
+.{{THEME_PREFIX}}-physicians-data-block .content-block {
+    width: calc(100% - 405px);
+    padding-left: 30px;
+}
+
+.{{THEME_PREFIX}}-physicians-data-block .content-block .h3 {
+    margin-bottom: 0;
+    font-weight: 500 !important;
+}
+
+.{{THEME_PREFIX}}-physicians-data-block .content-block .h6,
+.{{THEME_PREFIX}}-physicians-data-block .content-block .h3,
+.physicians-card .content-block .h3,
+.physicians-card .content-block .h6 {
+    color: var(--black);
+}
+
+.{{THEME_PREFIX}}-physicians-data-block .content-block .h6 {
+    margin-bottom: 16px;
+}
+
+.{{THEME_PREFIX}}-physicians-data-block .content-block p+.{{THEME_PREFIX}}-btn {
+    margin-top: -20px;
+}
+
+.physicians-card {
+    display: flex;
+    background: var(--default_banner_bg_color);
+    border-radius: 15px;
+    overflow: hidden;
+    /* position: relative; */
+    /* z-index: 1; */
+    height: 100%;
+}
+
+.physicians-card .img-block {
+    width: 48%;
+    position: relative;
+}
+
+.physicians-card .content-block {
+    width: 52%;
+    padding: 36px 56px 36px 30px;
+}
+
+.physicians-card .img-block .icon {
+    width: 47px;
+    height: 47px;
+    background: var(--primary);
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 50%;
+    transition: 0.5s all ease;
+}
+
+.physicians-card .img-block .icon:after {
+    margin-left: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.physicians-card .img-block img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.physicians-card .content-block .h3 {
+    margin-bottom: 0;
+    font-weight: 500 !important;
+}
+
+.physicians-card .content-block .h6 {
+    margin-bottom: 16px;
+}
+
+.physicians-card .content-block p {
+    margin-bottom: 0;
+    color: var(--secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.physicians-card:hover .img-block .icon {
+    transform: rotate(45deg);
+}
+
+.{{THEME_PREFIX}}-physicians-slider .item {
+    width: 840px;
+    height: 100%;
+}
+
+.{{THEME_PREFIX}}-physicians-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.{{THEME_PREFIX}}-physicians-slider::before,
+.{{THEME_PREFIX}}-physicians-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 365px;
+    height: 100%;
+    opacity: 0.95;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.{{THEME_PREFIX}}-physicians-slider::after {
+    left: unset;
+    right: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+.{{THEME_PREFIX}}-physicians-slider .owl-stage {
+    display: flex;
+}
+
+.{{THEME_PREFIX}}-physicians-slider .owl-item,
+.{{THEME_PREFIX}}-physicians-slider .item {
+    min-height: 100%;
+}
+
+section:has(.{{THEME_PREFIX}}-physicians-slider) .container:has(.{{THEME_PREFIX}}-physicians-slider:not(.off)),
+section:has(.{{THEME_PREFIX}}-physicians-slider) .container-fluid:has(.{{THEME_PREFIX}}-physicians-slider:not(.off)) {
+    max-width: 100% !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.{{THEME_PREFIX}}-physicians-slider.off {
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+}
+
+.{{THEME_PREFIX}}-physicians-slider.off .item {
+    margin: 0 auto;
+    height: auto;
+}
+
+.{{THEME_PREFIX}}-physicians-slider.off::before,
+.{{THEME_PREFIX}}-physicians-slider.off::after {
+    display: none;
+}
+
+@media (max-width: 1599px) {
+    .{{THEME_PREFIX}}-physicians-data-block {
+        padding: 40px;
+    }
+
+    .physicians-card .content-block {
+        padding: 30px 45px 30px 25px;
+    }
+
+    .{{THEME_PREFIX}}-physicians-data-block .img-block img {
+        top: 80px;
+    }
+}
+
+@media (max-width: 1399px) {
+    .{{THEME_PREFIX}}-physicians-data-block .img-block {
+        width: 350px;
+    }
+
+    .{{THEME_PREFIX}}-physicians-data-block .content-block {
+        width: calc(100% - 350px);
+    }
+
+    .{{THEME_PREFIX}}-physicians-data-block .content-block p+.{{THEME_PREFIX}}-btn {
+        margin-top: 0;
+    }
+
+    .{{THEME_PREFIX}}-physicians-slider .item {
+        width: 700px;
+    }
+
+    .{{THEME_PREFIX}}-physicians-slider::before,
+    .{{THEME_PREFIX}}-physicians-slider::after {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .{{THEME_PREFIX}}-physicians-data-block {
+        flex-direction: column;
+    }
+
+    .{{THEME_PREFIX}}-physicians-data-block .content-block {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 30px;
+    }
+
+    .{{THEME_PREFIX}}-physicians-slider::before,
+    .{{THEME_PREFIX}}-physicians-slider::after {
+        width: 200px;
+    }
+}
+
+@media (max-width: 991px) {
+    .{{THEME_PREFIX}}-physicians-slider .item {
+        width: 650px;
+    }
+
+    .{{THEME_PREFIX}}-physicians-slider.off .item:only-child {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .{{THEME_PREFIX}}-physicians-data-block .img-block {
+        width: 100%;
+    }
+
+    .{{THEME_PREFIX}}-physicians-data-block .img-block img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .{{THEME_PREFIX}}-physicians-data-block {
+        padding: 20px;
+    }
+
+    .{{THEME_PREFIX}}-physicians-data-block .content-block {
+        margin-top: 20px;
+    }
+
+    .physicians-card {
+        flex-wrap: wrap;
+    }
+
+    .physicians-card .img-block,
+    .physicians-card .content-block {
+        width: 100%;
+    }
+
+    .physicians-card .img-block {
+        height: 250px;
+    }
+
+    .physicians-card .img-block img {
+        object-position: top;
+    }
+
+    .physicians-card .content-block {
+        padding: 25px;
+    }
+
+    .{{THEME_PREFIX}}-physicians-slider .item {
+        width: auto;
+    }
+
+    .{{THEME_PREFIX}}-physicians-slider::before,
+    .{{THEME_PREFIX}}-physicians-slider::after {
+        display: none;
+    }
+}
+
+@media(max-width:390px) {
+    .physicians-card .img-block {
+        height: 200px;
+    }
+}

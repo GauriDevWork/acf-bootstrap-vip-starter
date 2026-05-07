@@ -53,7 +53,7 @@ function techark_register_custom_code_fields() {
                 array(
                     'param'    => 'options_page',
                     'operator' => '==',
-                    'value'    => 'acf-options', // match your ACF options page slug exactly
+                    'value'    => 'theme-options', // match your ACF options page slug exactly
                 ),
             ),
         ),
@@ -83,3 +83,37 @@ function techark_output_global_js() {
     $js = wp_strip_all_tags( $js );
     echo '<script id="techark-global-js">' . $js . '</script>';
 }
+
+/**
+ * Auto-import ACF field groups from /acf-json on theme activation.
+ * Idempotent — safe to run multiple times, will not create duplicates.
+ */
+function techark_auto_import_acf_json() {
+    if ( ! function_exists( 'acf_import_field_group' ) ) {
+        return;
+    }
+
+    $json_files = glob( get_template_directory() . '/acf-json/*.json' );
+
+    if ( empty( $json_files ) ) {
+        return;
+    }
+
+    foreach ( $json_files as $file ) {
+        $contents = file_get_contents( $file );
+        $field_group = json_decode( $contents, true );
+
+        if ( empty( $field_group ) || empty( $field_group['key'] ) ) {
+            continue;
+        }
+
+        // Idempotency check — skip if this field group already exists in the DB
+        $existing = acf_get_field_group( $field_group['key'] );
+        if ( $existing ) {
+            continue;
+        }
+
+        acf_import_field_group( $field_group );
+    }
+}
+add_action( 'after_switch_theme', 'techark_auto_import_acf_json' );

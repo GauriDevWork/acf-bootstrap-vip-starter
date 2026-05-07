@@ -1,0 +1,66 @@
+.redux-container-repeater .redux-repeater-accordion-repeater h3.ui-accordion-header {
+    text-align: left !important;
+    padding-left: 30px !important;
+}
+
+/* Target Redux media field preview by data-id */
+[data-id="placeholder_image"] .redux-option-image {
+    width: 568 !important;
+    height: 360px !important;
+}
+
+.toplevel_page_{{THEME_PREFIX}}options_options .redux-container {
+    position: relative;
+}
+
+.toplevel_page_{{THEME_PREFIX}}options_options .redux-container .redux-sidebar {
+    position: absolute;
+    top: 106px;
+    left: 0;
+    min-height: 100% !important;
+    display: flex;
+}
+
+.redux-container .redux-sidebar .redux-group-menu {
+    width: 100%;
+}
+
+#{{THEME_PREFIX}}options-{{THEME_PREFIX}}buttons:has(.redux-repeater-accordion-repeater:nth-child(2)) .redux-repeaters-add {
+    display: none;
+}
+
+#{{THEME_PREFIX}}options-container_width .ui-button {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+#reset_page_banner_image:hover,
+.redux-main .button.remove-image:hover,
+ .redux-main .removeCSS:hover {
+    color: #2271b1;
+}
+
+[data-opt-name="{{THEME_PREFIX}}options"] div,
+[data-opt-name="{{THEME_PREFIX}}options"] p,
+[data-opt-name="{{THEME_PREFIX}}options"] li,
+[data-opt-name="{{THEME_PREFIX}}options"] span,
+[data-opt-name="{{THEME_PREFIX}}options"] a,
+[data-opt-name="{{THEME_PREFIX}}options"] button {
+    font-family: 'Libre Franklin';
+}
+
+.redux-container .redux-main {
+    min-height: 60vh !important;
+}
+
+.redux-container-repeater .redux-repeater-accordion-repeater h3.ui-accordion-header {
+    cursor: pointer !important;
+}
+
+.picker-wrapper:has(#button_typography-color) .wp-picker-input-wrap {
+    display: inline-flex;
+}
+
+.picker-wrapper:has(#button_typography-color) .wp-picker-input-wrap.hidden {
+    display: none;
+}
