@@ -189,7 +189,7 @@ function techark_register_options_fields() {
             [
                 'param'    => 'options_page',
                 'operator' => '==',
-                'value'    => 'techark-theme-options',
+                'value'    => 'theme-options',
             ],
         ]],
     ]);

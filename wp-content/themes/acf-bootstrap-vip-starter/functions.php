@@ -1,4 +1,6 @@
 <?php
+require_once get_template_directory() . '/inc/helpers.php';
+require_once get_template_directory() . '/inc/layout-custom-code.php';
 /**
  * Sets up theme defaults and registers support for various WordPress
  * features such as title tag, post thumbnails, and HTML5 markup.
@@ -186,7 +188,7 @@ add_action( 'wp_enqueue_scripts', 'acf_vip_enqueue_assets' );
  * @param string $handle The script handle.
  * @return string The modified script tag.
  */
-require_once get_template_directory() . '/inc/helpers.php';
+
 function acf_vip_defer_scripts( $tag, $handle ) {
 
 	$defer_scripts = array( 'bootstrap' );

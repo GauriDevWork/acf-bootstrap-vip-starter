@@ -9,17 +9,21 @@ get_header();
 <?php if ( have_rows( 'page_builder' ) ) : ?>
 
 	<?php
+	$section_index = 0;
+
 	while ( have_rows( 'page_builder' ) ) :
 		the_row();
-		?>
 
-		<?php
+		// Pass section index to each layout via global
+		$GLOBALS['acf_vip_section_index'] = $section_index;
+
 		get_template_part(
 			'acf-flex/' . get_row_layout()
 		);
-		?>
 
-	<?php endwhile; ?>
+		$section_index++;
+	endwhile;
+	?>
 
 <?php endif; ?>
 
