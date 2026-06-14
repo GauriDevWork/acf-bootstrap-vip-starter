@@ -17,6 +17,8 @@ define( 'TECHARK_OPTIONS_VERSION', '1.0.0' );
 define( 'TECHARK_OPTIONS_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TECHARK_OPTIONS_URL', plugin_dir_url( __FILE__ ) );
 
+require_once plugin_dir_path( __FILE__ ) . 'includes/acf-options.php';
+
 /**
  * Register field group for Theme options.
  */
