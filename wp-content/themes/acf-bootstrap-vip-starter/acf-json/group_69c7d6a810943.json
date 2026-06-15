@@ -3758,6 +3758,76 @@
 					],
 					"min": "",
 					"max": ""
+				},
+				"layout_custom_layout": {
+					"key": "layout_custom_layout",
+					"name": "custom_layout",
+					"label": "Custom Layout",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "field_custom_layout_html",
+							"label": "Custom HTML",
+							"name": "custom_html",
+							"aria-label": "",
+							"type": "textarea",
+							"instructions": "Developer use only. Raw HTML output via wp_kses_post. Keep markup semantic and accessible.",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "100",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"rows": 10,
+							"placeholder": "<div class=\"my-component\">\n  <h2>Hello</h2>\n</div>",
+							"new_lines": ""
+						},
+						{
+							"key": "field_custom_layout_css",
+							"label": "Custom CSS",
+							"name": "layout_custom_css",
+							"aria-label": "",
+							"type": "textarea",
+							"instructions": "CSS scoped automatically to #section-{n}. No selectors needed. Example: background: #f5f5f5; padding: 40px 0;",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "50",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"rows": 8,
+							"placeholder": "background: #f5f5f5;\npadding: 40px 0;",
+							"new_lines": ""
+						},
+						{
+							"key": "field_custom_layout_js",
+							"label": "Custom JS",
+							"name": "layout_custom_js",
+							"aria-label": "",
+							"type": "textarea",
+							"instructions": "JS runs in an IIFE. Reference this section via: document.querySelector('#section-{n}')",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "50",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"rows": 8,
+							"placeholder": "const section = document.querySelector('#section-0');\nconsole.log(section);",
+							"new_lines": ""
+						}
+					],
+					"min": "",
+					"max": ""
 				}
 			},
 			"min": "",
@@ -3786,5 +3856,5 @@
 	"display_title": "",
 	"allow_ai_access": false,
 	"ai_description": "",
-	"modified": 1781404785
+	"modified": 1781502521
 }
