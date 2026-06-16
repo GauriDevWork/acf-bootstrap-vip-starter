@@ -1,0 +1,57 @@
+/* =========================
+   GLOBAL DESIGN TOKENS
+   Phase 2 — Sprint 2 Day 3
+========================= */
+:root {
+	/* Spacing scale */
+	--section-py: 80px;
+	--section-py-sm: 50px;
+	--section-py-xs: 30px;
+	--gap-sm: 16px;
+	--gap-md: 24px;
+	--gap-lg: 40px;
+
+	/* Typography scale */
+	--text-sm: 14px;
+	--text-base: 16px;
+	--text-lg: 18px;
+	--text-xl: 20px;
+
+	/* Border radius */
+	--radius-sm: 6px;
+	--radius-md: 10px;
+	--radius-lg: 16px;
+
+	/* Shadows */
+	--shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+	--shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+	--shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.10);
+
+	/* Card */
+	--card-bg: #ffffff;
+	--card-border: #eeeeee;
+
+	/* Muted text */
+	--text-muted: #666666;
+	--text-subtle: #999999;
+}
+
+/* Apply section spacing globally to all layout sections */
+[class*="section-"] {
+	padding-top: var(--section-py);
+	padding-bottom: var(--section-py);
+}
+
+@media (max-width: 991px) {
+	[class*="section-"] {
+		padding-top: var(--section-py-sm);
+		padding-bottom: var(--section-py-sm);
+	}
+}
+
+@media (max-width: 767px) {
+	[class*="section-"] {
+		padding-top: var(--section-py-xs);
+		padding-bottom: var(--section-py-xs);
+	}
+}

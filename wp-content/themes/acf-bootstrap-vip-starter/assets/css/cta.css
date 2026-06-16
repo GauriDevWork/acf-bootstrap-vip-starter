@@ -1,25 +1,49 @@
+/* =========================
+   CTA SECTION
+========================= */
 .section-cta {
 	position: relative;
 }
 
-/* Overlay only when image exists */
+/* Overlay only when bg image exists */
 .cta-overlay {
 	position: absolute;
 	inset: 0;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0, 0, 0, 0.52);
 	z-index: 1;
 }
 
 /* Content above overlay */
 .section-cta .container {
+	position: relative;
 	z-index: 2;
 }
 
-/* Spacing */
+/* Typography */
 .section-cta .cta-title {
-	margin-bottom: 15px;
+	font-size: clamp(24px, 3.5vw, 42px);
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: var(--gap-md);
 }
 
 .section-cta .cta-text {
-	margin-bottom: 20px;
+	font-size: var(--text-lg);
+	line-height: 1.7;
+	margin-bottom: var(--gap-lg);
+	opacity: 0.9;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.section-cta .cta-title {
+		font-size: 24px;
+	}
+
+	.section-cta .cta-text {
+		font-size: var(--text-base);
+	}
 }

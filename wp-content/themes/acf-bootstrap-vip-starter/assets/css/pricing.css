@@ -1,22 +1,79 @@
+/* =========================
+   PRICING SECTION
+========================= */
 .pricing-card {
-	padding: 30px;
-	border: 1px solid #eee;
+	padding: 40px 32px;
+	border: 1px solid var(--card-border);
+	border-radius: var(--radius-md);
 	text-align: center;
-	border-radius: 10px;
 	height: 100%;
+	background: var(--card-bg);
+	transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
+.pricing-card:hover {
+	box-shadow: var(--shadow-md);
+}
+
+/* Highlighted / featured plan */
 .pricing-card.highlighted {
-	border: 2px solid #000;
-	transform: scale(1.05);
+	border: 2px solid var(--primary, #0d6efd);
+	transform: scale(1.04);
+	box-shadow: var(--shadow-lg);
+	position: relative;
 }
 
+.pricing-card.highlighted::before {
+	content: 'Most Popular';
+	position: absolute;
+	top: -14px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: var(--primary, #0d6efd);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 4px 14px;
+	border-radius: 20px;
+	white-space: nowrap;
+}
+
+/* Plan name */
+.pricing-card h4 {
+	font-weight: 700;
+	margin-bottom: var(--gap-sm);
+}
+
+/* Price */
 .price {
-	font-size: 32px;
-	margin: 15px 0;
+	font-size: 42px;
+	font-weight: 800;
+	margin: var(--gap-md) 0;
+	color: var(--primary, #0d6efd);
+	line-height: 1;
 }
 
+/* Features list */
 .features {
-	margin-bottom: 20px;
-	line-height: 1.6;
+	margin-bottom: var(--gap-lg);
+	line-height: 1.9;
+	color: #444;
+	font-size: var(--text-base);
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+	.pricing-card.highlighted {
+		transform: scale(1);
+	}
+}
+
+@media (max-width: 767px) {
+	.pricing-card {
+		padding: 28px 20px;
+	}
+
+	.price {
+		font-size: 36px;
+	}
 }

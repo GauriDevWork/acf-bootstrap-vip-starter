@@ -1,82 +1,87 @@
 /* =========================
-   BASE SECTION
+   TESTIMONIALS SECTION
 ========================= */
 .section-testimonials {
 	position: relative;
 }
 
-/* =========================
-   CARD
-========================= */
+/* Card */
 .testimonial-card {
-	padding: 25px;
-	border-radius: 10px;
-	background: #f9f9f9;
+	padding: 32px 28px;
+	border-radius: var(--radius-md);
+	background: var(--card-bg);
+	border: 1px solid var(--card-border);
 	height: 100%;
 	text-align: center;
-	transition: all 0.3s ease;
+	transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .testimonial-card:hover {
-	box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+	box-shadow: var(--shadow-md);
+	transform: translateY(-3px);
 }
 
-/* =========================
-   IMAGE
-========================= */
+/* Avatar */
 .testimonial-img img {
-	width: 70px;
-	height: 70px;
+	width: 72px;
+	height: 72px;
 	object-fit: cover;
 	border-radius: 50%;
-	margin: 0 auto 15px;
+	margin: 0 auto var(--gap-md);
 	display: block;
+	border: 3px solid var(--card-border);
 }
 
-/* =========================
-   TEXT
-========================= */
+/* Quote text */
 .testimonial-text {
 	font-style: italic;
-	margin-bottom: 15px;
-	line-height: 1.6;
+	font-size: var(--text-lg);
+	line-height: 1.7;
+	color: #444;
+	margin-bottom: var(--gap-md);
+	position: relative;
 }
 
+.testimonial-text::before {
+	content: '\201C';
+	font-size: 48px;
+	line-height: 0;
+	vertical-align: -18px;
+	color: var(--primary, #0d6efd);
+	opacity: 0.25;
+	margin-right: 4px;
+}
+
+/* Name and role */
 .testimonial-name {
-	margin-bottom: 5px;
-	font-weight: 600;
+	font-weight: 700;
+	margin-bottom: 4px;
+	font-size: var(--text-base);
 }
 
 .testimonial-role {
-	font-size: 14px;
-	color: #777;
+	font-size: var(--text-sm);
+	color: var(--text-muted);
 }
 
-/* =========================
-   GRID FIXES
-========================= */
+/* Grid row gap */
 .section-testimonials .row {
-	row-gap: 20px;
+	row-gap: var(--gap-lg);
 }
 
-/* =========================
-   SLIDER (DEFAULT)
-========================= */
+/* Swiper */
 .testimonials-swiper .swiper-slide {
 	height: auto;
 }
 
-/* Pagination */
 .section-testimonials .swiper-pagination {
-	margin-top: 20px;
+	margin-top: var(--gap-md);
 	position: relative;
 }
 
-/* =========================
-   CENTERED SLIDER (PREMIUM LOOK)
-========================= */
+/* Centered slider */
 .testimonials-centered-swiper .swiper-slide {
-	max-width: 600px;
+	max-width: 620px;
 	margin: auto;
 	opacity: 0.4;
 	transform: scale(0.9);
@@ -87,17 +92,14 @@
 	opacity: 1;
 	transform: scale(1);
 }
-/* =========================
-   MOBILE OPTIMIZATION
-========================= */
-@media (max-width: 767px) {
 
+/* Mobile */
+@media (max-width: 767px) {
 	.testimonial-card {
-		padding: 20px;
+		padding: 24px 20px;
 	}
 
 	.testimonial-text {
-		font-size: 14px;
+		font-size: var(--text-base);
 	}
-
 }
