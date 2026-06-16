@@ -1,14 +1,24 @@
+/* =========================
+   STATS SECTION
+========================= */
+.section-stats .row {
+	row-gap: var(--gap-lg);
+}
+
 .section-stats .stat-number {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 4px;
+	font-size: clamp(36px, 5vw, 56px);
+	font-weight: 800;
+	margin-bottom: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	gap: 4px;
+	color: var(--primary, #0d6efd);
+	line-height: 1;
 }
 
 .section-stats .stat-label {
-    color: #666;
-    margin: 0;
+	color: var(--text-muted);
+	margin: 0;
+	font-size: var(--text-base);
 }

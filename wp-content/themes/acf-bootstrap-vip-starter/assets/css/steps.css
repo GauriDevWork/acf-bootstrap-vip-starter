@@ -1,12 +1,33 @@
+/* =========================
+   STEPS SECTION
+========================= */
+.section-steps .row {
+	row-gap: var(--gap-lg);
+}
+
 .section-steps .step-number {
-	width: 50px;
-	height: 50px;
-	background: #000;
+	width: 52px;
+	height: 52px;
+	background: var(--primary, #0d6efd);
 	color: #fff;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0 auto;
-	font-weight: bold;
+	margin: 0 auto var(--gap-md);
+	font-weight: 700;
+	font-size: var(--text-lg);
+	flex-shrink: 0;
+	box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
+
+.section-steps h5 {
+	font-weight: 700;
+	margin-bottom: var(--gap-sm);
+}
+
+.section-steps p {
+	color: var(--text-muted);
+	line-height: 1.7;
+	margin: 0;
 }

@@ -2,86 +2,94 @@
    FAQ SECTION
 ========================= */
 .section-faq {
-	max-width: 900px;
-	margin: 0 auto;
+	max-width: 820px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-/* =========================
-   FAQ ITEM
-========================= */
+/* FAQ item */
 .faq-item {
-	border: 1px solid #eee;
-	border-radius: 8px;
-	padding: 15px 20px;
-	margin-bottom: 15px;
-	background: #fff;
+	border: 1px solid var(--card-border);
+	border-radius: var(--radius-sm);
+	padding: 0;
+	margin-bottom: var(--gap-sm);
+	background: var(--card-bg);
+	overflow: hidden;
+	transition: box-shadow 0.2s ease;
 }
 
-/* =========================
-   QUESTION BUTTON
-========================= */
+.faq-item:hover {
+	box-shadow: var(--shadow-sm);
+}
+
+/* Question button */
 .faq-question {
 	width: 100%;
 	text-align: left;
 	background: none;
 	border: none;
-	font-size: 18px;
+	font-size: var(--text-lg);
 	font-weight: 600;
 	cursor: pointer;
 	position: relative;
-	padding: 10px 40px 10px 0;
+	padding: 20px 52px 20px 20px;
 	line-height: 1.4;
+	color: inherit;
+	transition: color 0.2s ease;
 }
 
-/* Remove default button styles */
+.faq-question:hover {
+	color: var(--primary, #0d6efd);
+}
+
 .faq-question:focus {
-	outline: none;
+	outline: 2px solid var(--primary, #0d6efd);
+	outline-offset: -2px;
 }
 
-/* =========================
-   ICON (+ / -)
-========================= */
+/* + / − icon */
 .faq-question::after {
 	content: '+';
 	position: absolute;
-	right: 0;
+	right: 20px;
 	top: 50%;
 	transform: translateY(-50%);
-	font-size: 20px;
-	transition: all 0.3s ease;
+	font-size: 22px;
+	font-weight: 400;
+	transition: transform 0.25s ease;
+	color: var(--primary, #0d6efd);
+	line-height: 1;
 }
 
 .faq-question[aria-expanded="true"]::after {
 	content: '−';
 }
 
-/* =========================
-   ANSWER
-========================= */
+/* Answer */
 .faq-answer {
-	margin-top: 10px;
-	line-height: 1.6;
-	color: #555;
+	padding: 0 20px 20px;
+	line-height: 1.7;
+	color: var(--text-muted);
+	font-size: var(--text-base);
 }
 
-/* =========================
-   SMOOTH SPACING
-========================= */
 .faq-answer p {
-	margin-bottom: 10px;
+	margin-bottom: var(--gap-sm);
 }
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 767px) {
+.faq-answer p:last-child {
+	margin-bottom: 0;
+}
 
+/* Mobile */
+@media (max-width: 767px) {
 	.faq-question {
-		font-size: 16px;
+		font-size: var(--text-base);
+		padding: 16px 44px 16px 16px;
 	}
 
 	.faq-answer {
-		font-size: 14px;
+		padding: 0 16px 16px;
+		font-size: var(--text-sm);
 	}
-
 }

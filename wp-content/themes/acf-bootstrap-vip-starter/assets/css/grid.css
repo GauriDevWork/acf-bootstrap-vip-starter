@@ -1,17 +1,36 @@
+/* =========================
+   GRID LAYOUT
+========================= */
+.section-grid .row {
+	row-gap: var(--gap-lg);
+}
+
 .section-grid .grid-card {
-	padding: 25px;
-	border: 1px solid #eee;
-	border-radius: 10px;
-	transition: all 0.3s ease;
-	background: #fff;
+	padding: 32px 24px;
+	border: 1px solid var(--card-border);
+	border-radius: var(--radius-md);
+	transition: box-shadow 0.25s ease, transform 0.25s ease;
+	background: var(--card-bg);
+	height: 100%;
 }
 
 .section-grid .grid-card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-md);
 }
 
 .section-grid img {
-	max-width: 60px;
-	margin-bottom: 15px;
+	max-width: 56px;
+	margin-bottom: var(--gap-md);
+}
+
+.section-grid .grid-card h5 {
+	font-weight: 700;
+	margin-bottom: var(--gap-sm);
+}
+
+.section-grid .grid-card p {
+	color: var(--text-muted);
+	margin: 0;
+	line-height: 1.7;
 }
