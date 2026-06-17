@@ -92,12 +92,12 @@ function acf_vip_enqueue_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Styles
+	// Vite build output — Bootstrap CSS + custom SCSS compiled
 	wp_enqueue_style(
-		'bootstrap',
-		get_template_directory_uri() . '/assets/css/bootstrap.min.css',
+		'vite-main',
+		get_template_directory_uri() . '/assets/dist/css/main.css',
 		array(),
-		'5.0',
-		'all'
+		'1.0'
 	);
 
 	wp_enqueue_style(
@@ -143,11 +143,12 @@ function acf_vip_enqueue_assets() {
 	);
 
 	// Scripts
+	// Vite build output — Bootstrap JS bundled
 	wp_enqueue_script(
-		'bootstrap',
-		get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js',
+		'vite-main',
+		get_template_directory_uri() . '/assets/dist/js/main.js',
 		array(),
-		'5.0',
+		'1.0',
 		true
 	);
 
@@ -191,7 +192,7 @@ add_action( 'wp_enqueue_scripts', 'acf_vip_enqueue_assets' );
 
 function acf_vip_defer_scripts( $tag, $handle ) {
 
-	$defer_scripts = array( 'bootstrap' );
+	$defer_scripts = array( 'vite-main' );
 
 	if ( in_array( $handle, $defer_scripts, true ) ) {
 		return str_replace( ' src', ' defer src', $tag );

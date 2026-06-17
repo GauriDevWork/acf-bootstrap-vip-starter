@@ -1,0 +1,30 @@
+{
+  "name": "acf-bootstrap-vip-starter",
+  "version": "1.0.0",
+  "description": "This project is a custom WordPress theme built to create reusable page layouts without relying on heavy page builders like Elementor or WPBakery.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GauriDevWork/acf-bootstrap-vip-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GauriDevWork/acf-bootstrap-vip-starter/issues"
+  },
+  "homepage": "https://github.com/GauriDevWork/acf-bootstrap-vip-starter#readme",
+  "devDependencies": {
+    "sass": "^1.101.0",
+    "vite": "^8.0.16"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}
