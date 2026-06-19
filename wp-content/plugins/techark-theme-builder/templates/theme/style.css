@@ -1,0 +1,20 @@
+/**
+ * Theme Name:  {{THEME_NAME}}
+ * Description: {{THEME_DESCRIPTION}}
+ * Author:      {{THEME_AUTHOR}}
+ * Author URI:  {{THEME_AUTHOR_URI}}
+ * Version:     {{THEME_VERSION}}
+ * Text Domain: {{THEME_SLUG}}
+ */
+
+.screen-reader-text {
+	position: absolute;
+	left: -9999px;
+}
+
+.screen-reader-text:focus {
+	left: 0;
+	background: #000;
+	color: #fff;
+	padding: 10px;
+}
