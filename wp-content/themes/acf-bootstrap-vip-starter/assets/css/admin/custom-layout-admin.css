@@ -1,0 +1,86 @@
+/**
+ * Custom Layout Admin Styles
+ */
+
+/* CodeMirror sizing */
+.CodeMirror {
+    height: 220px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.acf-field[data-name="custom_html"] .CodeMirror {
+    height: 300px;
+}
+
+/* File browser container */
+.acf-vip-file-browser {
+    background: #f6f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 12px 0;
+}
+
+/* Each CSS/JS section */
+.acf-vip-asset-section {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.acf-vip-asset-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Header row */
+.acf-vip-asset-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.acf-vip-asset-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #3c434a;
+    min-width: 55px;
+}
+
+/* Dropdown */
+.acf-vip-file-select {
+    flex: 1;
+    min-width: 200px;
+    font-size: 12px;
+    padding: 4px 8px;
+    border: 1px solid #8c8f94;
+    border-radius: 3px;
+    height: 30px;
+}
+
+/* Upload button */
+.acf-vip-upload-btn {
+    font-size: 12px !important;
+    padding: 3px 10px !important;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 30px;
+    line-height: 24px;
+}
+
+/* Status */
+.acf-vip-upload-status {
+    font-size: 11px;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+/* Hide raw ACF file fields — replaced by file browser dropdowns */
+/* acf-vip-hidden-field class is set in the ACF JSON wrapper */
+.acf-field.acf-vip-hidden-field {
+    display: none !important;
+}
