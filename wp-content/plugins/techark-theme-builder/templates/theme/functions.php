@@ -4,6 +4,7 @@ require_once get_template_directory() . '/inc/layout-custom-code.php';
 require_once get_template_directory() . '/inc/acf-options-page.php';
 require_once get_template_directory() . '/inc/acf-options-fields.php';
 require_once get_template_directory() . '/inc/global-styles.php';
+require_once get_template_directory() . '/inc/custom-layout-admin.php';
 /**
  * Sets up theme defaults and registers support for various WordPress
  * features such as title tag, post thumbnails, and HTML5 markup.
