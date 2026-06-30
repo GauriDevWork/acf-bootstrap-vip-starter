@@ -22,3 +22,4 @@ define( 'TECHARK_BUILDER_URL', plugin_dir_url( __FILE__ ) );
 require_once TECHARK_BUILDER_PATH . 'inc/admin-menu.php';
 require_once TECHARK_BUILDER_PATH . 'inc/theme-generator.php';
 require_once TECHARK_BUILDER_PATH . 'inc/template-creator.php';
+require_once TECHARK_BUILDER_PATH . 'inc/asset-manager.php';

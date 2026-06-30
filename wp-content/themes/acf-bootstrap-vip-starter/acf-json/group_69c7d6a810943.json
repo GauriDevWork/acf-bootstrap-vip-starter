@@ -3782,7 +3782,7 @@
 							"default_value": "",
 							"maxlength": "",
 							"rows": 10,
-							"placeholder": "<div class=\"my-component\">\n  <h2>Hello</h2>\n</div>",
+							"placeholder": "",
 							"new_lines": ""
 						},
 						{
@@ -3802,7 +3802,7 @@
 							"default_value": "",
 							"maxlength": "",
 							"rows": 8,
-							"placeholder": "background: #f5f5f5;\npadding: 40px 0;",
+							"placeholder": "",
 							"new_lines": ""
 						},
 						{
@@ -3822,8 +3822,48 @@
 							"default_value": "",
 							"maxlength": "",
 							"rows": 8,
-							"placeholder": "const section = document.querySelector('#section-0');\nconsole.log(section);",
+							"placeholder": "",
 							"new_lines": ""
+						},
+						{
+							"key": "field_custom_layout_css_file",
+							"label": "CSS File",
+							"name": "custom_layout_css_file",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "50",
+								"class": "acf-vip-hidden-field",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "e.g. owl.carousel.min.css",
+							"maxlength": "",
+							"prepend": "",
+							"append": ""
+						},
+						{
+							"key": "field_custom_layout_js_file",
+							"label": "JS File",
+							"name": "custom_layout_js_file",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "50",
+								"class": "acf-vip-hidden-field",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "e.g. owl.carousel.min.js",
+							"maxlength": "",
+							"prepend": "",
+							"append": ""
 						}
 					],
 					"min": "",
@@ -3856,5 +3896,5 @@
 	"display_title": "",
 	"allow_ai_access": false,
 	"ai_description": "",
-	"modified": 1781502521
+	"modified": 1782722475
 }
