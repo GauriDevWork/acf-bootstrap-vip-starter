@@ -2,17 +2,12 @@
 /**
  * Steps Section
  */
-// Get unique section ID for this layout instance
-$section_id = acf_vip_layout_section_id();
-
-// Output scoped custom CSS/JS BEFORE the section HTML
-acf_vip_output_layout_custom_code( $section_id );
 
 $heading = get_sub_field('heading');
 $settings = acf_vip_section_settings();
 ?>
 
-<section id="<?php echo esc_attr( $section_id ); ?>" class="section-steps <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>">
+<section <?php echo $settings['id']; ?> class="section-steps <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>" aria-label="Steps">
 
     <div class="<?php echo $settings['container']; ?>">
 

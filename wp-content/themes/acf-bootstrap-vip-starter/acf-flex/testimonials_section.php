@@ -9,7 +9,7 @@ $layout  = get_sub_field('layout_type') ?: 'slider';
 $settings = acf_vip_section_settings();
 ?>
 
-<section <?php echo $settings['id']; ?> class="section-testimonials <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>">
+<section <?php echo $settings['id']; ?> class="section-testimonials <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>" aria-label="Testimonials">
 
     <div class="<?php echo $settings['container']; ?>">
 

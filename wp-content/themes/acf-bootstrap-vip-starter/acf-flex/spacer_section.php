@@ -9,7 +9,7 @@ $show_line = get_sub_field( 'show_line' );
 $settings = acf_vip_section_settings();
 ?>
 
-<section <?php echo $settings['id']; ?> class="section-spacer <?php echo $settings['class']; ?>">
+<section <?php echo $settings['id']; ?> class="section-spacer <?php echo $settings['class']; ?>" aria-label="Spacer">
 
     <div style="height: <?php echo esc_attr( $height ); ?>px;"></div>
 

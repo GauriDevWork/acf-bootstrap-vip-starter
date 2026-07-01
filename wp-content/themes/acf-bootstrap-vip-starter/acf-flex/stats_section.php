@@ -7,7 +7,7 @@ $heading = get_sub_field('heading');
 $settings = acf_vip_section_settings();
 ?>
 
-<section <?php echo $settings['id']; ?> class="section-stats text-center <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>">
+<section <?php echo $settings['id']; ?> class="section-stats text-center <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>" aria-label="Statistics">
 
     <div class="<?php echo $settings['container']; ?>">
 

@@ -2,11 +2,6 @@
 /**
  * CTA Section Layout
  */
-// Get unique section ID for this layout instance
-$section_id = acf_vip_layout_section_id();
-
-// Output scoped custom CSS/JS BEFORE the section HTML
-acf_vip_output_layout_custom_code( $section_id );
 
 $heading = get_sub_field('heading');
 $content = get_sub_field('content');
@@ -29,7 +24,7 @@ if (!empty($bg_image)) {
 }
 ?>
 
-<section id="<?php echo esc_attr( $section_id ); ?>"
+<section aria-label="Call to Action"
     class="section-cta <?php echo esc_attr($section_class); ?>"
     <?php if ($style): ?>
         style="<?php echo esc_attr($style); ?>"

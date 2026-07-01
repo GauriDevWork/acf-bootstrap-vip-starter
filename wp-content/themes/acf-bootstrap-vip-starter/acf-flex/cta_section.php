@@ -24,7 +24,7 @@ if (!empty($bg_image)) {
 }
 ?>
 
-<section 
+<section aria-label="Call to Action"
     class="section-cta <?php echo esc_attr($section_class); ?>"
     <?php if ($style): ?>
         style="<?php echo esc_attr($style); ?>"

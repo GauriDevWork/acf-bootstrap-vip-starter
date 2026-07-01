@@ -6,7 +6,7 @@ $heading = get_sub_field('heading');
 $settings = acf_vip_section_settings();
 ?>
 
-<section <?php echo $settings['id']; ?> class="section-faq <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>">
+<section <?php echo $settings['id']; ?> class="section-faq <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>" aria-label="Frequently Asked Questions">
 
     <div class="<?php echo $settings['container']; ?>">
 
