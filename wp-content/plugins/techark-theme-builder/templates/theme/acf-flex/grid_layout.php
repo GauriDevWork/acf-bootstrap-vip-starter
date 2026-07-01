@@ -1,10 +1,4 @@
 <?php
-// Get unique section ID for this layout instance
-$section_id = acf_vip_layout_section_id();
-
-// Output scoped custom CSS/JS BEFORE the section HTML
-acf_vip_output_layout_custom_code( $section_id );
-
 $heading = get_sub_field('heading');
 $columns = get_sub_field('columns') ?: 3;
 
@@ -20,7 +14,7 @@ $col_map = [
 $col_class = $col_map[$columns] ?? 'col-lg-4';
 ?>
 
-<section id="<?php echo esc_attr( $section_id ); ?>" class="section-grid <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>">
+<section <?php echo $settings['id']; ?> class="section-grid <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>" aria-label="Grid">
 
     <div class="<?php echo $settings['container']; ?>">
 

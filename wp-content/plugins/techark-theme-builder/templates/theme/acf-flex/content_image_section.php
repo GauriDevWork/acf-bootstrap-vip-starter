@@ -2,11 +2,6 @@
 /**
  * Content + Image Section
  */
-// Get unique section ID for this layout instance
-$section_id = acf_vip_layout_section_id();
-
-// Output scoped custom CSS/JS BEFORE the section HTML
-acf_vip_output_layout_custom_code( $section_id );
 
 $heading = get_sub_field( 'heading' );
 $content = get_sub_field( 'content' );
@@ -24,7 +19,7 @@ $section_class = acf_vip_section_classes( $bg, $spacing );
 $text_class    = acf_vip_text_align( $align );
 ?>
 
-<section id="<?php echo esc_attr( $section_id ); ?>" class="section-content-image <?php echo esc_attr( $section_class ); ?>">
+<section class="section-content-image <?php echo esc_attr( $section_class ); ?>" aria-label="Content with Image">
 
 	<div class="container">
 

@@ -14,7 +14,7 @@ $col_map = [
 $col_class = $col_map[$columns] ?? 'col-lg-4';
 ?>
 
-<section <?php echo $settings['id']; ?> class="section-grid <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>">
+<section <?php echo $settings['id']; ?> class="section-grid <?php echo $settings['spacing']; ?> <?php echo $settings['class']; ?>" aria-label="Grid">
 
     <div class="<?php echo $settings['container']; ?>">
 

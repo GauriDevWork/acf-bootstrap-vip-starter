@@ -19,7 +19,7 @@ $section_class = acf_vip_section_classes( $bg, $spacing );
 $text_class    = acf_vip_text_align( $align );
 ?>
 
-<section class="section-content-image <?php echo esc_attr( $section_class ); ?>">
+<section class="section-content-image <?php echo esc_attr( $section_class ); ?>" aria-label="Content with Image">
 
 	<div class="container">
 
