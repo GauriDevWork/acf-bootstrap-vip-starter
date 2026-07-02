@@ -55,3 +55,87 @@
 		padding-bottom: var(--section-py-xs);
 	}
 }
+
+/* =========================
+   FOCUS STYLES
+   Phase 2 — Day 10
+   Bootstrap 5 suppresses focus outlines by default.
+   These overrides restore visible focus rings for all
+   interactive elements to meet WCAG 2.1 AA requirements.
+========================= */
+
+/* Global focus ring */
+:focus-visible {
+	outline: 2px solid var(--primary, #0d6efd);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+/* Buttons — replace Bootstrap box-shadow focus with outline */
+.btn:focus-visible,
+.btn:focus {
+	outline: 2px solid var(--primary, #0d6efd);
+	outline-offset: 3px;
+	box-shadow: none;
+}
+
+/* Form inputs */
+.form-control:focus,
+.form-select:focus {
+	outline: 2px solid var(--primary, #0d6efd);
+	outline-offset: 0;
+	box-shadow: none;
+	border-color: var(--primary, #0d6efd);
+}
+
+/* Navigation links */
+.nav-link:focus-visible,
+.navbar-brand:focus-visible {
+	outline: 2px solid var(--primary, #0d6efd);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+/* FAQ accordion buttons */
+.faq-question:focus-visible {
+	outline: 2px solid var(--primary, #0d6efd);
+	outline-offset: 3px;
+}
+
+/* Skip to content — show on focus */
+.skip-link.screen-reader-text:focus {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 9999;
+	background: var(--primary, #0d6efd);
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 4px;
+	font-weight: 600;
+	font-size: 14px;
+	text-decoration: none;
+	outline: 2px solid #fff;
+	outline-offset: 2px;
+	width: auto;
+	height: auto;
+	clip: auto;
+	overflow: visible;
+	white-space: normal;
+}
+
+/* =========================
+   SCREEN READER UTILITIES
+========================= */
+
+.screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
